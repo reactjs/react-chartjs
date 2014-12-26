@@ -1,0 +1,26 @@
+{
+  "name": "react-charts",
+  "version": "0.0.1",
+  "description": "react charting components",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jhudson8/react-charts"
+  },
+  "keywords": [
+    "react",
+    "react-component"
+  ],
+  "author": "Joe Hudson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jhudson8/react-charts/issues"
+  },
+  "homepage": "https://github.com/jhudson8/react-charts",
+  "devDependencies": {
+    "webpack": "^1.4.14"
+  }
+}
