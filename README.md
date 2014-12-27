@@ -15,20 +15,20 @@ Installation
 ### Browser
 ```
     <script src="path/to/chart.js"></script>
-    <script src="path/to/react-charts.js"></script>
+    <script src="path/to/react-chartjs.js"></script>
 ```
 
 ### CommonJS
 ```
     // allow the components to use the React object
-    require('react-charts/vars').React = React;
+    require('react-chartjs/vars').React = React;
 ```
 
 Example Usage
 -------------
 ```
 var LineChart = Chart.React.Line;  // for browser include
-var LineChart = require("react-charts/line"); // for commonJS
+var LineChart = require("react-chartjs/line"); // for commonJS
 
 var MyComponent = React.createClass({
   render: function() {
