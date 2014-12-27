@@ -26,6 +26,7 @@
   "homepage": "https://github.com/jhudson8/react-chartjs",
   "devDependencies": {
     "uglify-js": "^2.4.16",
-    "webpack": "^1.4.14"
+    "webpack": "^1.4.14",
+    "webpack-dev-server": "^1.7.0"
   }
 }
