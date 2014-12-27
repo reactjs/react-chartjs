@@ -1,4 +1,42 @@
 react-charts
 ============
 
-common react charting components using chart.js
+rich interactive react charting components using [chart.js](http://www.chartjs.org/) including
+
+* Line chart
+* Bar chart
+* Radar chart
+* Polar area chart
+* Pie chart
+* Doughnut chart
+
+Installation
+------------
+### Browser
+```
+    <script src="path/to/chart.js"></script>
+    <script src="path/to/react-charts.js"></script>
+```
+
+### CommonJS
+```
+    // allow the components to use the React object
+    require('react-charts/vars').React = React;
+```
+
+Example Usage
+-------------
+```
+var LineChart = Chart.React.Line;  // for browser include
+var LineChart = require("react-charts/line"); // for commonJS
+
+var MyComponent = React.createClass({
+  render: function() {
+    return <LineChart data={chartData} options={chartOptions} width="600" height="250/>
+  }
+});
+```
+
+* ```data``` represents the chart data (see [chart.js](http://www.chartjs.org/) for details)
+* ```options``` represents the chart options (see [chart.js](http://www.chartjs.org/) for details)
+* all other parameters will be passed through to the ```canvas``` element
