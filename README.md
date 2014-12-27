@@ -1,4 +1,4 @@
-react-charts
+react-chartjs
 ============
 
 rich interactive react charting components using [chart.js](http://www.chartjs.org/) including
