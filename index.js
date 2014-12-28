@@ -8,7 +8,8 @@
             return main;
         });
     }
-})(function(Chart) {
+})(function(Chart, React) {
+  require('./vars').React = React;
   Chart.React = {
     Bar: require('./bar'),
     Doughnut: require('./doughnut'),

@@ -29,9 +29,9 @@ Installation
 
 ### AMD
 ```
-    define('path/to/chart.js', 'react-chartjs', function(Chart, ReactChart) {
+    define('path/to/chart.js', 'react', 'react-chartjs', function(Chart, React, ReactChart) {
         // initialize ReactChartjs
-        ReactChart(Chart);
+        ReactChart(Chart, React);
         /// now you can refer to React charts as Chart.React.*
     });
 ```
