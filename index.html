@@ -4,6 +4,9 @@
       canvas {
         margin-top: 20px;
       }
+      body {
+        max-width: 778px;
+      }
     </style>
 
     <script src="http://fb.me/react-0.12.2.js"></script>
@@ -18,6 +21,7 @@
 
   <script>
   $(document).ready(function() {
+    Chart.defaults.global.responsive = true;
 
         function rand(min, max, num) {
           var rtn = [];
@@ -176,38 +180,26 @@
       }
 
       example('Line', 'line', {
-        width: "600",
-        height: "250",
         data: data1
       });
 
       example('Bar', 'bar', {
-        width: "600",
-        height: "250",
         data: data1
       });
 
       example('Radar', 'radar', {
-        width: "600",
-        height: "250",
         data: data2
       });
 
       example('PolarArea', 'polar-area', {
-        width: "600",
-        height: "250",
         data: data3
       });
 
       example('Pie', 'pie', {
-        width: "600",
-        height: "250",
         data: data3
       });
 
       example('Doughnut', 'doughnut', {
-        width: "600",
-        height: "250",
         data: data3
       });
 
