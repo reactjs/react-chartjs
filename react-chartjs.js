@@ -1,5 +1,5 @@
 /*!
- * react-charts v0.0.1
+ * react-charts v0.1.0
  * https://github.com/jhudson8/react-charts
  *
  *
@@ -69,16 +69,27 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	Chart.React = {
-	  Bar: __webpack_require__(1),
-	  Doughnut: __webpack_require__(2),
-	  Line: __webpack_require__(3),
-	  Pie: __webpack_require__(4),
-	  PolarArea: __webpack_require__(5),
-	  Radar: __webpack_require__(6)
-	};
-
-	  
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;(function(main) {
+	    if (typeof Chart === 'function') {
+	        // script include
+	        main(Chart);
+	    } else  {
+	        // AMD
+	        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function() {
+	            return main;
+	        }.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	    }
+	})(function(Chart) {
+	  Chart.React = {
+	    Bar: __webpack_require__(1),
+	    Doughnut: __webpack_require__(2),
+	    Line: __webpack_require__(3),
+	    Pie: __webpack_require__(4),
+	    PolarArea: __webpack_require__(5),
+	    Radar: __webpack_require__(6)
+	  };
+	  return Chart;
+	});
 
 
 

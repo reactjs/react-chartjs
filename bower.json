@@ -1,7 +1,7 @@
 {
   "name": "react-chartjs",
   "main": "react-chartjs.js",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "homepage": "https://github.com/jhudson8/react-chartjs",
   "authors": [
     "Joe Hudson <joehud@gmail.com>"
