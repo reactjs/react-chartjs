@@ -16,20 +16,30 @@ Installation
 ------------
 ### Browser
 ```
+    <!-- chart.js must be loaded before react-chartjs -->
     <script src="path/to/chart.js"></script>
     <script src="path/to/react-chartjs.js"></script>
 ```
 
 ### CommonJS
 ```
-    // allow the components to use the React object
+    // initialize ReactChartjs
     require('react-chartjs/vars').React = React;
+```
+
+### AMD
+```
+    define('path/to/chart.js', 'react-chartjs', function(Chart, ReactChart) {
+        // initialize ReactChartjs
+        ReactChart(Chart);
+        /// now you can refer to React charts as Chart.React.*
+    });
 ```
 
 Example Usage
 -------------
 ```
-var LineChart = Chart.React.Line;  // for browser include
+var LineChart = Chart.React.Line;  // for browser or AMD (using define('path/to/chart.js'))
 var LineChart = require("react-chartjs/line"); // for commonJS
 
 var MyComponent = React.createClass({
