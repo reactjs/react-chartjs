@@ -16,6 +16,9 @@
     <script type="text/javascript" src="http://zeptojs.com/zepto.js"></script>
   </head>
   <body>
+<pre><code>
+Chart.defaults.global.responsive = true;
+</code></pre>
     <div id="examples"></div>
   </body>
 
@@ -169,7 +172,7 @@
                    'var ' + varName + ' = require("react-chartjs/' + commonJSName + '"); \/\/ for commonJS\n\n' +
                    'var MyComponent = React.createClass({\n' +
                    '  render: function() {\n' +
-                   '    return &lt;' + varName + ' data={chartData} options={chartOptions} width="600" height="250/&gt;\n' +
+                   '    return &lt;' + varName + ' data={chartData} options={chartOptions}/&gt;\n' +
                    '  }\n' +
                    '});';
         root.appendChild($('<pre><code>' + code + '</code></pre>')[0]);
