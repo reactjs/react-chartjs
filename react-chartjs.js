@@ -1,5 +1,5 @@
 /*!
- * react-charts v0.1.0
+ * react-charts v0.1.1
  * https://github.com/jhudson8/react-charts
  *
  *
@@ -79,14 +79,15 @@
 	            return main;
 	        }.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 	    }
-	})(function(Chart) {
+	})(function(Chart, React) {
+	  __webpack_require__(1).React = React;
 	  Chart.React = {
-	    Bar: __webpack_require__(1),
-	    Doughnut: __webpack_require__(2),
-	    Line: __webpack_require__(3),
-	    Pie: __webpack_require__(4),
-	    PolarArea: __webpack_require__(5),
-	    Radar: __webpack_require__(6)
+	    Bar: __webpack_require__(2),
+	    Doughnut: __webpack_require__(3),
+	    Line: __webpack_require__(4),
+	    Pie: __webpack_require__(5),
+	    PolarArea: __webpack_require__(6),
+	    Radar: __webpack_require__(7)
 	  };
 	  return Chart;
 	});
@@ -95,60 +96,6 @@
 
 /***/ },
 /* 1 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var vars = __webpack_require__(7);
-
-	module.exports = vars.createClass('Bar', ['getBarsAtEvent']);
-
-
-/***/ },
-/* 2 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var vars = __webpack_require__(7);
-
-	module.exports = vars.createClass('Doughnut', ['getSegmentsAtEvent']);
-
-
-/***/ },
-/* 3 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var vars = __webpack_require__(7);
-
-	module.exports = vars.createClass('Line', ['getPointsAtEvent']);
-
-
-/***/ },
-/* 4 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var vars = __webpack_require__(7);
-
-	module.exports = vars.createClass('Pie', ['getSegmentsAtEvent']);
-
-
-/***/ },
-/* 5 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var vars = __webpack_require__(7);
-
-	module.exports = vars.createClass('PolarArea', ['getSegmentsAtEvent']);
-
-
-/***/ },
-/* 6 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var vars = __webpack_require__(7);
-
-	module.exports = vars.createClass('Radar', ['getPointsAtEvent']);
-
-
-/***/ },
-/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {module.exports = {
@@ -218,6 +165,60 @@
 	};
 	
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+
+/***/ },
+/* 2 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var vars = __webpack_require__(1);
+
+	module.exports = vars.createClass('Bar', ['getBarsAtEvent']);
+
+
+/***/ },
+/* 3 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var vars = __webpack_require__(1);
+
+	module.exports = vars.createClass('Doughnut', ['getSegmentsAtEvent']);
+
+
+/***/ },
+/* 4 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var vars = __webpack_require__(1);
+
+	module.exports = vars.createClass('Line', ['getPointsAtEvent']);
+
+
+/***/ },
+/* 5 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var vars = __webpack_require__(1);
+
+	module.exports = vars.createClass('Pie', ['getSegmentsAtEvent']);
+
+
+/***/ },
+/* 6 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var vars = __webpack_require__(1);
+
+	module.exports = vars.createClass('PolarArea', ['getSegmentsAtEvent']);
+
+
+/***/ },
+/* 7 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var vars = __webpack_require__(1);
+
+	module.exports = vars.createClass('Radar', ['getPointsAtEvent']);
+
 
 /***/ }
 /******/ ])
