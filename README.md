@@ -42,3 +42,9 @@ var MyComponent = React.createClass({
 * ```data``` represents the chart data (see [chart.js](http://www.chartjs.org/) for details)
 * ```options``` represents the chart options (see [chart.js](http://www.chartjs.org/) for details)
 * all other parameters will be passed through to the ```canvas``` element
+
+## Support me
+
+If you like this project you may support me by donating something on Gittip, starring this repository or reporting bugs and ideas in the issue section.
+
+[![gittip](http://jhudson8.github.io/react-mixin-manager/gittip-button.jpg)](https://gratipay.com/jhudson8/)
