@@ -33,16 +33,16 @@ module.exports = {
         chart.destroy();
       };
 
-      classData.componentWillReceiveProps = function(props) {
+      classData.componentWillReceiveProps = function(nextProps) {
         var chart = this.state.chart;
         chart.destroy();
-        this.initializeChart(props);
+        this.initializeChart(nextProps);
       };
 
-      classData.initializeChart = function(props) {
+      classData.initializeChart = function(nextProps) {
         var el = this.getDOMNode();
         var ctx = el.getContext("2d");
-        var chart = new Chart(ctx)[chartType](this.props.data, this.props.options || {});
+        var chart = new Chart(ctx)[chartType](nextProps.data, nextProps.options || {});
         this.state.chart = chart;
       };
 
