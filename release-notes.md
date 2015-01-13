@@ -2,6 +2,12 @@
 
 ## Development
 
+[Commits](https://github.com/jhudson8/react-chartjs/compare/v0.1.2...master)
+
+## v0.1.2 - January 13th, 2015
+- fix chart rendering error when properties change
+
+
 [Commits](https://github.com/jhudson8/react-chartjs/compare/v0.1.1...master)
 
 ## v0.1.1 - December 28th, 2014
