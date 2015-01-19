@@ -2,6 +2,12 @@
 
 ## Development
 
+[Commits](https://github.com/jhudson8/react-chartjs/compare/v0.1.3...master)
+
+## v0.1.3 - January 19th, 2015
+- Actually include the commit mentioned with the 1.2 release
+
+
 [Commits](https://github.com/jhudson8/react-chartjs/compare/v0.1.2...master)
 
 ## v0.1.2 - January 13th, 2015
