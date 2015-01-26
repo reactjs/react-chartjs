@@ -24,6 +24,9 @@
     "url": "https://github.com/jhudson8/react-chartjs/issues"
   },
   "homepage": "https://github.com/jhudson8/react-chartjs",
+  "peerDependencies": {
+    "react": "*"
+  },
   "devDependencies": {
     "uglify-js": "^2.4.16",
     "webpack": "^1.4.14"
