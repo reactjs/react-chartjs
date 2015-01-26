@@ -1,5 +1,9 @@
 # Release Notes
 
+## v0.2.1 - January 26th, 2015
+- AMD bug fix
+
+
 ## v0.2.0 - January 26th, 2015
 - Allow for commonJS code to not require initialization
 
