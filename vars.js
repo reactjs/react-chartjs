@@ -56,7 +56,7 @@ module.exports = {
     }
 
     var React = this.React || global.React;
-    if (!React && (typeof require !== 'undefined') && (typeof define === 'function')) {
+    if (!React && (typeof require !== 'undefined') && (typeof define !== 'function')) {
       // allow the charts to not need to be initialized for commonJS
       React = this.React = require('react');
     }
