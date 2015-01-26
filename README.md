@@ -23,8 +23,7 @@ Installation
 
 ### CommonJS
 ```
-    // initialize ReactChartjs
-    require('react-chartjs/vars').React = React;
+    // nothing you need to do here for initialization
 ```
 
 ### AMD
