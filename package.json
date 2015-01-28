@@ -1,6 +1,6 @@
 {
   "name": "react-chartjs-commonjs",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Fork of react-chartjs to make requiring with CommonJS easier",
   "main": "lib/index.js",
   "repository": {
