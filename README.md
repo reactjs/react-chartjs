@@ -1,49 +1,17 @@
-react-chartjs
+react-chartjs-commonjs
 ============
 
-rich interactive react charting components using [chart.js](http://www.chartjs.org/) including
-
-* Line chart
-* Bar chart
-* Radar chart
-* Polar area chart
-* Pie chart
-* Doughnut chart
-
-[view chart examples](http://jhudson8.github.io/react-chartjs/index.html)
-
-Installation
-------------
-### Browser
-```
-    <!-- chart.js must be loaded before react-chartjs -->
-    <script src="path/to/chart.js"></script>
-    <script src="path/to/react-chartjs.js"></script>
-```
-
-### CommonJS
-```
-    // nothing you need to do here for initialization
-```
-
-### AMD
-```
-    define('path/to/chart.js', 'react', 'react-chartjs', function(Chart, React, ReactChart) {
-        // initialize ReactChartjs
-        ReactChart(Chart, React);
-        /// now you can refer to React charts as Chart.React.*
-    });
-```
+Fork of [react-chartjs](https://github.com/jhudson8/react-chartjs) to make it easier to import with webpack
+or other CommonJS module loader
 
 Example Usage
 -------------
 ```
-var LineChart = Chart.React.Line;  // for browser or AMD (using define('path/to/chart.js'))
-var LineChart = require("react-chartjs/line"); // for commonJS
+var ReactChart = require("react-chartjs-commonjs");
 
 var MyComponent = React.createClass({
   render: function() {
-    return <LineChart data={chartData} options={chartOptions} width="600" height="250"/>
+    return <ReactChart.Line data={chartData} options={chartOptions} width="600" height="250"/>
   }
 });
 ```
@@ -51,9 +19,3 @@ var MyComponent = React.createClass({
 * ```data``` represents the chart data (see [chart.js](http://www.chartjs.org/) for details)
 * ```options``` represents the chart options (see [chart.js](http://www.chartjs.org/) for details)
 * all other parameters will be passed through to the ```canvas``` element
-
-## Support me
-
-If you like this project you may support me by donating something on Gittip, starring this repository or reporting bugs and ideas in the issue section.
-
-[![gittip](http://jhudson8.github.io/react-mixin-manager/gittip-button.jpg)](https://gratipay.com/jhudson8/)
