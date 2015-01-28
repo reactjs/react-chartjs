@@ -1,3 +1,2 @@
-var vars = require('./vars');
 
-module.exports = vars.createClass('Radar', ['getPointsAtEvent']);
+module.exports = require('./createClass')('Radar', ['getPointsAtEvent']);

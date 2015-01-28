@@ -1,3 +1,2 @@
-var vars = require('./vars');
 
-module.exports = vars.createClass('Pie', ['getSegmentsAtEvent']);
+module.exports = require('./createClass')('Pie', ['getSegmentsAtEvent']);

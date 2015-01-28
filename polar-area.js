@@ -1,3 +1,2 @@
-var vars = require('./vars');
 
-module.exports = vars.createClass('PolarArea', ['getSegmentsAtEvent']);
+module.exports = require('./createClass')('PolarArea', ['getSegmentsAtEvent']);

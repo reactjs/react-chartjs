@@ -1,14 +1,11 @@
 {
-  "name": "react-chartjs",
-  "version": "0.2.1",
-  "description": "react charting components using the chartjs lib",
+  "name": "react-chartjs-commonjs",
+  "version": "0.0.2",
+  "description": "Fork of react-chartjs to make requiring with CommonJS easier",
   "main": "index.js",
-  "scripts": {
-    "test": "mocha"
-  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jhudson8/react-chartjs"
+    "url": "https://github.com/seanadkinson/react-chartjs"
   },
   "keywords": [
     "react",
@@ -18,17 +15,14 @@
     "graph",
     "chartjs"
   ],
-  "author": "Joe Hudson",
+  "author": "Sean Adkinson",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jhudson8/react-chartjs/issues"
+    "url": "https://github.com/seanadkinson/react-chartjs/issues"
   },
-  "homepage": "https://github.com/jhudson8/react-chartjs",
+  "homepage": "https://github.com/seanadkinson/react-chartjs",
   "peerDependencies": {
-    "react": "*"
-  },
-  "devDependencies": {
-    "uglify-js": "^2.4.16",
-    "webpack": "^1.4.14"
+    "react": "*",
+    "chart.js": "*"
   }
 }
