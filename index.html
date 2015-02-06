@@ -168,8 +168,7 @@ Chart.defaults.global.responsive = true;
         root.appendChild(title[0]);
 
         var varName = type + 'Chart';
-        var code = 'var ' + varName + ' = Chart.React.' + type + ';  \/\/ for browser include\n' +
-                   'var ' + varName + ' = require("react-chartjs/' + commonJSName + '"); \/\/ for commonJS\n\n' +
+        var code = 'var ' + varName + ' = require("react-chartjs).' + type + '");\n\n' +
                    'var MyComponent = React.createClass({\n' +
                    '  render: function() {\n' +
                    '    return &lt;' + varName + ' data={chartData} options={chartOptions}/&gt;\n' +
