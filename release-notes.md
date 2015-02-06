@@ -1,5 +1,8 @@
 # Release Notes
 
+## v0.3.0 - February 6th, 2015
+- Remove AMD and javascript include support to make commonjs behavior simple
+
 ## v0.2.1 - January 26th, 2015
 - AMD bug fix
 
