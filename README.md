@@ -14,32 +14,16 @@ rich interactive react charting components using [chart.js](http://www.chartjs.o
 
 Installation
 ------------
-### Browser
+This is a CommonJS component only (to be used with something like Webpack or Browserify)
 ```
-    <!-- chart.js must be loaded before react-chartjs -->
-    <script src="path/to/chart.js"></script>
-    <script src="path/to/react-chartjs.js"></script>
+npm install --save react-chartjs
 ```
-
-### CommonJS
-```
-    // nothing you need to do here for initialization
-```
-
-### AMD
-```
-    define('path/to/chart.js', 'react', 'react-chartjs', function(Chart, React, ReactChart) {
-        // initialize ReactChartjs
-        ReactChart(Chart, React);
-        /// now you can refer to React charts as Chart.React.*
-    });
-```
+You must also include the [chartjs](http://www.chartjs.org/) script on your html page
 
 Example Usage
 -------------
 ```
-var LineChart = Chart.React.Line;  // for browser or AMD (using define('path/to/chart.js'))
-var LineChart = require("react-chartjs/line"); // for commonJS
+var LineChart = require("react-chartjs").Line;
 
 var MyComponent = React.createClass({
   render: function() {
