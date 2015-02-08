@@ -18,7 +18,7 @@ This is a CommonJS component only (to be used with something like Webpack or Bro
 ```
 npm install --save react-chartjs
 ```
-You must also include the [chartjs](http://www.chartjs.org/) script on your html page
+You must also include [chart.js](https://www.npmjs.com/package/chart.js) and [React](https://www.npmjs.com/package/react) as dependencies.
 
 Example Usage
 -------------
