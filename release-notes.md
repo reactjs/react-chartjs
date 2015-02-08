@@ -1,7 +1,7 @@
 # Release Notes
 
 ## v0.4.0 - February 7th, 2015
-- Added Chart.js as a peer dependency (thanks @seanadkinson)
+- Added Chart.js as a peer dependency (thanks @pghalliday)
 
 ## v0.3.0 - February 6th, 2015
 - Remove AMD and javascript include support to make commonjs behavior simple (thanks @seanadkinson)
