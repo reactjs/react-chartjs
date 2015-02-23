@@ -37,6 +37,11 @@ var MyComponent = React.createClass({
 * all other parameters will be passed through to the ```canvas``` element
 
 
+Chart References
+----------------
+The ```canvas``` element can be retrieved using ```getCanvass``` and the ```chartjs object``` can be retrieved using ```getChart```.
+
+
 ### Other React projects that may interest you
 
 * [jhudson8/react-mixin-manager](https://github.com/jhudson8/react-mixin-manager)
