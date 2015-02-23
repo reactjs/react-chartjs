@@ -1,5 +1,9 @@
 # Release Notes
 
+## v0.5.0 - February 23rd, 2015
+- Added a ```getChart``` method on the chart components to return the chartjs object
+- Added a ```getCanvass``` method on the chart components to return the canvass DOM element
+
 ## v0.4.0 - February 7th, 2015
 - Added Chart.js as a peer dependency (thanks @pghalliday)
 
