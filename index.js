@@ -4,5 +4,6 @@ module.exports = {
   Line: require('./lib/line'),
   Pie: require('./lib/pie'),
   PolarArea: require('./lib/polar-area'),
-  Radar: require('./lib/radar')
+  Radar: require('./lib/radar'),
+  createClass: require('./lib/core').createClass
 };
