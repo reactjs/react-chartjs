@@ -1,5 +1,19 @@
 # Release Notes
 
+## v0.6.0 - March 25th, 2015
+- [#12](https://github.com/jhudson8/react-chartjs/pull/12) - Allow custom chart types. ([@tcard](https://api.github.com/users/tcard))
+- [#11](https://github.com/jhudson8/react-chartjs/pull/11) - fix failed to update points for doughnut chart ([@neoalienson](https://api.github.com/users/neoal
+ienson))
+
+a ```createChart``` method is exposed
+
+description from associated PR
+
+This changeset exposes the createClass method in lib/core, and adds a third argument to it so that you can pass the dataKey value that was previously fixed in the dataKeys variable.
+
+E. g. if you want to use https://github.com/Regaddi/Chart.StackedBar.js, you would do something like var StackedBarChart = require('react-chartjs').createClass('StackedBar', ['getBarsAtEvent'], 'bars'); (provided you previously registered StackedBar with Chart.js, of course).
+
+
 ## v0.5.0 - February 23rd, 2015
 - Added a ```getChart``` method on the chart components to return the chartjs object
 - Added a ```getCanvass``` method on the chart components to return the canvass DOM element
