@@ -39,7 +39,7 @@ var MyComponent = React.createClass({
 
 Chart References
 ----------------
-The ```canvas``` element can be retrieved using ```getCanvass``` and the ```chartjs object``` can be retrieved using ```getChart```.
+The ```canvas``` element can be retrieved using ```getCanvas``` and the ```chartjs object``` can be retrieved using ```getChart```.
 
 
 ### Other React projects that may interest you
