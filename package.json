@@ -28,6 +28,7 @@
   "homepage": "https://github.com/jhudson8/react-chartjs",
   "peerDependencies": {
     "react": "*",
+    "react-dom": "*",
     "chart.js": "*"
   },
   "devDependencies": {
