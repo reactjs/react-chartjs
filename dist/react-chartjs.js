@@ -1,12 +1,12 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("Chartjs"), require("react"));
+		module.exports = factory(require("Chart"), require("react"));
 	else if(typeof define === 'function' && define.amd)
-		define(["Chartjs", "react"], factory);
+		define(["Chart", "react"], factory);
 	else if(typeof exports === 'object')
-		exports["react-chartjs"] = factory(require("Chartjs"), require("react"));
+		exports["react-chartjs"] = factory(require("Chart"), require("react"));
 	else
-		root["react-chartjs"] = factory(root["Chartjs"], root["React"]);
+		root["react-chartjs"] = factory(root["Chart"], root["React"]);
 })(this, function(__WEBPACK_EXTERNAL_MODULE_8__, __WEBPACK_EXTERNAL_MODULE_9__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
