@@ -26,8 +26,14 @@ module.exports = {
                 commonjs: "react",
                 amd: "react"
             },
+            "react-dom": {
+                root: "ReactDOM",
+                commonjs2: "react-dom",
+                commonjs: "react-dom",
+                amd: "react-dom"
+            },
             "chart.js": {
-                root: "Chartjs",
+                root: "Chart",
                 commonjs2: "Chartjs",
                 commonjs: "Chartjs",
                 amd: "Chartjs"

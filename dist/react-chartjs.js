@@ -1,13 +1,13 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("Chartjs"), require("react"));
+		module.exports = factory(require("react"), require("react-dom"), require("Chartjs"));
 	else if(typeof define === 'function' && define.amd)
-		define(["Chartjs", "react"], factory);
+		define(["react", "react-dom", "Chartjs"], factory);
 	else if(typeof exports === 'object')
-		exports["react-chartjs"] = factory(require("Chartjs"), require("react"));
+		exports["react-chartjs"] = factory(require("react"), require("react-dom"), require("Chartjs"));
 	else
-		root["react-chartjs"] = factory(root["Chartjs"], root["React"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE_8__, __WEBPACK_EXTERNAL_MODULE_9__) {
+		root["react-chartjs"] = factory(root["React"], root["ReactDOM"], root["Chart"]);
+})(this, function(__WEBPACK_EXTERNAL_MODULE_3__, __WEBPACK_EXTERNAL_MODULE_4__, __WEBPACK_EXTERNAL_MODULE_5__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -56,12 +56,12 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	module.exports = {
 	  Bar: __webpack_require__(1),
-	  Doughnut: __webpack_require__(2),
-	  Line: __webpack_require__(3),
-	  Pie: __webpack_require__(4),
-	  PolarArea: __webpack_require__(5),
-	  Radar: __webpack_require__(6),
-	  createClass: __webpack_require__(7).createClass
+	  Doughnut: __webpack_require__(6),
+	  Line: __webpack_require__(7),
+	  Pie: __webpack_require__(8),
+	  PolarArea: __webpack_require__(9),
+	  Radar: __webpack_require__(10),
+	  createClass: __webpack_require__(2).createClass
 	};
 
 
@@ -69,7 +69,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var vars = __webpack_require__(7);
+	var vars = __webpack_require__(2);
 
 	module.exports = vars.createClass('Bar', ['getBarsAtEvent']);
 
@@ -78,50 +78,8 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var vars = __webpack_require__(7);
-
-	module.exports = vars.createClass('Doughnut', ['getSegmentsAtEvent']);
-
-
-/***/ },
-/* 3 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var vars = __webpack_require__(7);
-
-	module.exports = vars.createClass('Line', ['getPointsAtEvent']);
-
-
-/***/ },
-/* 4 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var vars = __webpack_require__(7);
-
-	module.exports = vars.createClass('Pie', ['getSegmentsAtEvent']);
-
-
-/***/ },
-/* 5 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var vars = __webpack_require__(7);
-
-	module.exports = vars.createClass('PolarArea', ['getSegmentsAtEvent']);
-
-
-/***/ },
-/* 6 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var vars = __webpack_require__(7);
-
-	module.exports = vars.createClass('Radar', ['getPointsAtEvent']);
-
-
-/***/ },
-/* 7 */
-/***/ function(module, exports, __webpack_require__) {
+	var React = __webpack_require__(3);
+	var ReactDOM = __webpack_require__(4);
 
 	module.exports = {
 	  createClass: function(chartType, methodNames, dataKey) {
@@ -146,7 +104,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var extras = ['clear', 'stop', 'resize', 'toBase64Image', 'generateLegend', 'update', 'addData', 'removeData'];
 	    function extra(type) {
 	      classData[type] = function() {
-	        this.state.chart[name].apply(this.state.chart, arguments);
+	        return this.state.chart[type].apply(this.state.chart, arguments);
 	      };
 	    }
 
@@ -161,19 +119,23 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    classData.componentWillReceiveProps = function(nextProps) {
 	      var chart = this.state.chart;
-	      if (this.props.redraw) {
+	      if (nextProps.redraw) {
 	        chart.destroy();
 	        this.initializeChart(nextProps);
 	      } else {
 	        dataKey = dataKey || dataKeys[chart.name];
 	        updatePoints(nextProps, chart, dataKey);
+	        if (chart.scale) {
+	          chart.scale.xLabels = nextProps.data.labels;
+	          chart.scale.calculateXLabelRotation();
+	        }
 	        chart.update();
 	      }
 	    };
 
 	    classData.initializeChart = function(nextProps) {
-	      var Chart = __webpack_require__(8);
-	      var el = this.getDOMNode();
+	      var Chart = __webpack_require__(5);
+	      var el = ReactDOM.findDOMNode(this);
 	      var ctx = el.getContext("2d");
 	      var chart = new Chart(ctx)[chartType](nextProps.data, nextProps.options || {});
 	      this.state.chart = chart;
@@ -186,8 +148,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    // return the canvass element that contains the chart
 	    classData.getCanvass = function() {
-	      return this.refs.canvass.getDOMNode();
+	      return this.refs.canvass;
 	    };
+
+	    classData.getCanvas = classData.getCanvass;
 
 	    var i;
 	    for (i=0; i<extras.length; i++) {
@@ -197,7 +161,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	      extra(methodNames[i]);
 	    }
 
-	    var React = __webpack_require__(9);
 	    return React.createClass(classData);
 	  }
 	};
@@ -213,33 +176,101 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  if (name === 'PolarArea' || name === 'Pie' || name === 'Doughnut') {
 	    nextProps.data.forEach(function(segment, segmentIndex) {
-	      chart.segments[segmentIndex].value = segment.value;
+	      if (!chart.segments[segmentIndex]) {
+	        chart.addData(segment);
+	      } else {
+	        Object.keys(segment).forEach(function (key) {
+	          chart.segments[segmentIndex][key] = segment[key];
+	        });
+	      }
 	    });
 	  } else {
+	    while (chart.scale.xLabels.length > nextProps.data.labels.length) {
+	      chart.removeData();
+	    }
 	    nextProps.data.datasets.forEach(function(set, setIndex) {
 	      set.data.forEach(function(val, pointIndex) {
-	        chart.datasets[setIndex][dataKey][pointIndex].value = val;
+	        if (typeof(chart.datasets[setIndex][dataKey][pointIndex]) == "undefined") {
+	          addData(nextProps, chart, setIndex, pointIndex);
+	        } else {
+	          chart.datasets[setIndex][dataKey][pointIndex].value = val;
+	        }
 	      });
 	    });
 	  }
 	};
 
+	var addData = function(nextProps, chart, setIndex, pointIndex) {
+	  var values = [];
+	  nextProps.data.datasets.forEach(function(set) {
+	    values.push(set.data[pointIndex]);
+	  });
+	  chart.addData(values, nextProps.data.labels[setIndex]);
+	};
 
 
+/***/ },
+/* 3 */
+/***/ function(module, exports) {
 
+	module.exports = __WEBPACK_EXTERNAL_MODULE_3__;
+
+/***/ },
+/* 4 */
+/***/ function(module, exports) {
+
+	module.exports = __WEBPACK_EXTERNAL_MODULE_4__;
+
+/***/ },
+/* 5 */
+/***/ function(module, exports) {
+
+	module.exports = __WEBPACK_EXTERNAL_MODULE_5__;
+
+/***/ },
+/* 6 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var vars = __webpack_require__(2);
+
+	module.exports = vars.createClass('Doughnut', ['getSegmentsAtEvent']);
+
+
+/***/ },
+/* 7 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var vars = __webpack_require__(2);
+
+	module.exports = vars.createClass('Line', ['getPointsAtEvent']);
 
 
 /***/ },
 /* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __WEBPACK_EXTERNAL_MODULE_8__;
+	var vars = __webpack_require__(2);
+
+	module.exports = vars.createClass('Pie', ['getSegmentsAtEvent']);
+
 
 /***/ },
 /* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __WEBPACK_EXTERNAL_MODULE_9__;
+	var vars = __webpack_require__(2);
+
+	module.exports = vars.createClass('PolarArea', ['getSegmentsAtEvent']);
+
+
+/***/ },
+/* 10 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var vars = __webpack_require__(2);
+
+	module.exports = vars.createClass('Radar', ['getPointsAtEvent']);
+
 
 /***/ }
 /******/ ])
