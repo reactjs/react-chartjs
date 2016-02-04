@@ -57,10 +57,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = {
 	  Bar: __webpack_require__(1),
 	  Doughnut: __webpack_require__(6),
-	  Line: __webpack_require__(7),
-	  Pie: __webpack_require__(8),
-	  PolarArea: __webpack_require__(9),
-	  Radar: __webpack_require__(10),
+	  DoughnutTextInside: __webpack_require__(7),
+	  Line: __webpack_require__(8),
+	  Pie: __webpack_require__(9),
+	  PolarArea: __webpack_require__(10),
+	  Radar: __webpack_require__(11),
 	  createClass: __webpack_require__(2).createClass
 	};
 
@@ -137,6 +138,43 @@ return /******/ (function(modules) { // webpackBootstrap
 	      var Chart = __webpack_require__(5);
 	      var el = ReactDOM.findDOMNode(this);
 	      var ctx = el.getContext("2d");
+	Chart.types.Doughnut.extend({
+	        name: "DoughnutTextInside",
+	        showTooltip: function() {
+	          this.chart.ctx.save();
+	          Chart.types.Doughnut.prototype.showTooltip.apply(this, arguments);
+	          this.chart.ctx.restore();
+	        },
+	        draw: function() {
+	          Chart.types.Doughnut.prototype.draw.apply(this,chart, arguments);
+	          var width = this.chart.width,
+	            height = this.chart.height;
+
+	          var fontSize = (height / 114).toFixed(2);
+	          this.chart.ctx.fillStyle = '#000';
+	          this.chart.ctx.font = fontSize + "em Verdana";
+	          this.chart.ctx.textBaseline = "middle";
+
+	          var total = 0;
+	          var filled = 0;
+	          var clone = this.segments.slice();
+	          clone.map(function(val) {
+	            total = total + val.value;
+	          })
+	          clone.pop();
+	          clone.map(function(val) {
+	            filled = filled + val.value;
+	          })
+
+	          var text = Math.round((100 / total) * filled) + "%",
+	            textX = Math.round((width - this.chart.ctx.measureText(text).width) / 2),
+	            textY = height / 2;
+
+	          this.chart.ctx.fillText(text, textX, textY);
+	        }
+	      });
+	  
+	      
 	      var chart = new Chart(ctx)[chartType](nextProps.data, nextProps.options || {});
 	      this.state.chart = chart;
 	    };
@@ -185,7 +223,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      }
 	    });
 	  } else {
-	    while (chart.scale.xLabels.length > nextProps.data.labels.length) {
+	    while (chart.scale && chart.scale.xLabels.length > nextProps.data.labels.length) {
 	      chart.removeData();
 	    }
 	    nextProps.data.datasets.forEach(function(set, setIndex) {
@@ -242,7 +280,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var vars = __webpack_require__(2);
 
-	module.exports = vars.createClass('Line', ['getPointsAtEvent']);
+	module.exports = vars.createClass('DoughnutTextInside', ['getSegmentsAtEvent']);
 
 
 /***/ },
@@ -251,7 +289,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var vars = __webpack_require__(2);
 
-	module.exports = vars.createClass('Pie', ['getSegmentsAtEvent']);
+	module.exports = vars.createClass('Line', ['getPointsAtEvent']);
 
 
 /***/ },
@@ -260,11 +298,20 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var vars = __webpack_require__(2);
 
-	module.exports = vars.createClass('PolarArea', ['getSegmentsAtEvent']);
+	module.exports = vars.createClass('Pie', ['getSegmentsAtEvent']);
 
 
 /***/ },
 /* 10 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var vars = __webpack_require__(2);
+
+	module.exports = vars.createClass('PolarArea', ['getSegmentsAtEvent']);
+
+
+/***/ },
+/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var vars = __webpack_require__(2);
