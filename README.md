@@ -1,4 +1,4 @@
-react-chartjs
+react-chartjs (updating to ChartJS v2 and ES6)
 ============
 
 rich interactive react charting components using [chart.js](http://www.chartjs.org/) including
@@ -47,4 +47,3 @@ The ```canvas``` element can be retrieved using ```getCanvas``` and the ```chart
 * [jhudson8/react-mixin-manager](https://github.com/jhudson8/react-mixin-manager)
 * [jhudson8/react-backbone](https://github.com/jhudson8/react-backbone)
 * [jhudson8/react-events](https://github.com/jhudson8/react-events)
-
