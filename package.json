@@ -29,7 +29,7 @@
   "dependencies": {
     "react": "<=0.13.0",
     "react-dom": "<=0.13.0",
-    "chartjs": ">=0.3.7"
+    "chartjs": "^0.3.7"
   },
   "devDependencies": {
     "uglify-js": "^2.4.16",
