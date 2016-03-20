@@ -56,11 +56,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	module.exports = {
 	  Bar: __webpack_require__(1),
-	  Doughnut: __webpack_require__(14),
-	  Line: __webpack_require__(15),
-	  Pie: __webpack_require__(16),
-	  PolarArea: __webpack_require__(17),
-	  Radar: __webpack_require__(18),
+	  Bubble: __webpack_require__(14),
+	  Doughnut: __webpack_require__(15),
+	  Line: __webpack_require__(16),
+	  Pie: __webpack_require__(17),
+	  PolarArea: __webpack_require__(18),
+	  Radar: __webpack_require__(19),
+	  Scatter: __webpack_require__(20),
 	  createClass: __webpack_require__(2).createClass
 	};
 
@@ -1641,7 +1643,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var vars = __webpack_require__(2);
 
-	module.exports = vars.createClass('Doughnut', ['getSegmentsAtEvent']);
+	module.exports = vars.createClass('Bubble', ['getPointsAtEvent']);
 
 
 /***/ }),
@@ -1650,7 +1652,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var vars = __webpack_require__(2);
 
-	module.exports = vars.createClass('Line', ['getPointsAtEvent']);
+	module.exports = vars.createClass('Doughnut', ['getSegmentsAtEvent']);
 
 
 /***/ }),
@@ -1659,7 +1661,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var vars = __webpack_require__(2);
 
-	module.exports = vars.createClass('Pie', ['getSegmentsAtEvent']);
+	module.exports = vars.createClass('Line', ['getPointsAtEvent']);
 
 
 /***/ }),
@@ -1668,7 +1670,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var vars = __webpack_require__(2);
 
-	module.exports = vars.createClass('PolarArea', ['getSegmentsAtEvent']);
+	module.exports = vars.createClass('Pie', ['getSegmentsAtEvent']);
 
 
 /***/ }),
@@ -1677,7 +1679,25 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var vars = __webpack_require__(2);
 
+	module.exports = vars.createClass('PolarArea', ['getSegmentsAtEvent']);
+
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	var vars = __webpack_require__(2);
+
 	module.exports = vars.createClass('Radar', ['getPointsAtEvent']);
+
+
+/***/ }),
+/* 20 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	var vars = __webpack_require__(2);
+
+	module.exports = vars.createClass('Scatter', ['getPointsAtEvent']);
 
 
 /***/ })
