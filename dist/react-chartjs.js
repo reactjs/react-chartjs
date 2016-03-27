@@ -184,6 +184,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	        });
 	      }
 	    });
+
+	    while(nextProps.data.length < chart.segments.length) {
+	      chart.removeData();
+	    }
 	  } else {
 	    while (chart.scale.xLabels.length > nextProps.data.labels.length) {
 	      chart.removeData();
