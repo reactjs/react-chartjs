@@ -22,7 +22,7 @@ You must also include [chart.js](https://www.npmjs.com/package/chart.js) and [Re
 
 Example Usage
 -------------
-```
+```javascript
 var LineChart = require("react-chartjs").Line;
 
 var MyComponent = React.createClass({
