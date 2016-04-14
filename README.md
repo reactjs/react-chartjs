@@ -20,7 +20,7 @@ npm install --save react-chartjs
 ```
 You must also include [chart.js](https://www.npmjs.com/package/chart.js) and [React](https://www.npmjs.com/package/react) as dependencies.  
 ```
-npm i chart.js@^1.1.1 react react-dom --save
+npm install --save chart.js@^1.1.1 react react-dom
 ```  
 
 Example Usage
