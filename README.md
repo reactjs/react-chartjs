@@ -20,7 +20,7 @@ npm install --save react-chartjs
 ```
 You must also include [chart.js](https://www.npmjs.com/package/chart.js) and [React](https://www.npmjs.com/package/react) as dependencies.  
 ```
-npm install --save chart.js@^1.1.1 react react-dom
+npm install --save chart.js@^1.x react react-dom
 ```  
 
 Example Usage
@@ -50,4 +50,3 @@ The ```canvas``` element can be retrieved using ```getCanvas``` and the ```chart
 * [jhudson8/react-mixin-manager](https://github.com/jhudson8/react-mixin-manager)
 * [jhudson8/react-backbone](https://github.com/jhudson8/react-backbone)
 * [jhudson8/react-events](https://github.com/jhudson8/react-events)
-
