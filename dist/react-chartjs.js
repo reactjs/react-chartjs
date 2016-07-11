@@ -83,6 +83,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	module.exports = {
 	  createClass: function(chartType, methodNames, dataKey) {
+	    var excludedProps = ['data', 'options', 'redraw'];
 	    var classData = {
 	      displayName: chartType + 'Chart',
 	      getInitialState: function() { return {}; },
@@ -92,7 +93,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        };
 	        for (var name in this.props) {
 	          if (this.props.hasOwnProperty(name)) {
-	            if (name !== 'data' && name !== 'options') {
+	            if (excludedProps.indexOf(name) === -1) {
 	              _props[name] = this.props[name];
 	            }
 	          }
@@ -127,7 +128,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	        updatePoints(nextProps, chart, dataKey);
 	        if (chart.scale) {
 	          chart.scale.xLabels = nextProps.data.labels;
+	           
+	            if (chart.scale.calculateXLabelRotation){
 	          chart.scale.calculateXLabelRotation();
+	            }
 	        }
 	        chart.update();
 	      }
@@ -188,6 +192,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	    while(nextProps.data.length < chart.segments.length) {
 	      chart.removeData();
 	    }
+	  } else if (name === "Radar") {
+	      chart.removeData();
+	      nextProps.data.datasets.forEach(function(set, setIndex) {
+	      set.data.forEach(function(val, pointIndex) {
+	        if (typeof(chart.datasets[setIndex][dataKey][pointIndex]) == "undefined") {
+	          addData(nextProps, chart, setIndex, pointIndex);
+	        } else {
+	          chart.datasets[setIndex][dataKey][pointIndex].value = val;
+	        }
+	      });
+	    });
 	  } else {
 	    while (chart.scale.xLabels.length > nextProps.data.labels.length) {
 	      chart.removeData();
