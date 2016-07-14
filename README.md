@@ -10,7 +10,7 @@ rich interactive react charting components using [chart.js](http://www.chartjs.o
 * Pie chart
 * Doughnut chart
 
-[view chart examples](http://jhudson8.github.io/react-chartjs/index.html)
+[view chart examples](http://reactjs.github.io/react-chartjs/index.html)
 
 Installation
 ------------
