@@ -5,6 +5,7 @@ rich interactive react charting components using [chart.js](http://www.chartjs.o
 
 * Line chart
 * Bar chart
+* HorizontalBar chart
 * Radar chart
 * Polar area chart
 * Pie chart
