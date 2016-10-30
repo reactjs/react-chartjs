@@ -27,6 +27,9 @@ node_modules
 # Users Environment Variables
 .lock-wscript
 
+*.swp
+demo/*
+
 .DS_Store
 showcase
 .generator-release

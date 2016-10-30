@@ -1,5 +1,6 @@
 module.exports = {
   Bar: require('./lib/bar'),
+  HorizontalBar: require('./lib/horizontal-bar'),
   Bubble: require('./lib/bubble'),
   Doughnut: require('./lib/doughnut'),
   Line: require('./lib/line'),
