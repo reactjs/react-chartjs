@@ -9,6 +9,8 @@ rich interactive react charting components using [chart.js](http://www.chartjs.o
 * Polar area chart
 * Pie chart
 * Doughnut chart
+* Bubble chart
+* HorizontalBar chart
 
 [view chart examples](http://reactjs.github.io/react-chartjs/index.html)
 
@@ -20,7 +22,7 @@ npm install --save react-chartjs
 ```
 You must also include [chart.js](https://www.npmjs.com/package/chart.js) and [React](https://www.npmjs.com/package/react) as dependencies.  
 ```
-npm install --save chart.js@^1.1.1 react react-dom
+npm install --save chart.js@^2.5.0 react react-dom
 ```  
 
 Example Usage

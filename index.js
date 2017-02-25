@@ -1,9 +1,13 @@
+const createClass = require('./lib/core').createClass;
+
 module.exports = {
-  Bar: require('./lib/bar'),
-  Doughnut: require('./lib/doughnut'),
-  Line: require('./lib/line'),
-  Pie: require('./lib/pie'),
-  PolarArea: require('./lib/polar-area'),
-  Radar: require('./lib/radar'),
-  createClass: require('./lib/core').createClass
+  DoughnutChart: createClass('doughnut', []),
+  PieChart: createClass('pie', []),
+  LineChart: createClass('line', []),
+  BarChart: createClass('bar', []),
+  RadarChart: createClass('radar', []),
+  PolarAreaChart: createClass('polarArea', []),
+  BubbleChart: createClass('bubble', []),
+  HorizontalBarChart: createClass('horizontalBar', []),
+  createClass: createClass
 };

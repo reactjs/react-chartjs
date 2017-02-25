@@ -32,3 +32,6 @@ showcase
 .generator-release
 
 .idea/*
+
+# Yarn
+yarn.lock
