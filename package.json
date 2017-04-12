@@ -1,6 +1,6 @@
 {
   "name": "react-chartjs",
-  "version": "0.7.3",
+  "version": "2.0.0-beta2",
   "description": "react charting components using the chartjs lib",
   "main": "index.js",
   "scripts": {
