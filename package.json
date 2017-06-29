@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/jhudson8/react-chartjs",
   "peerDependencies": {
+    "create-react-class": "^15.5.2",
     "react": "*",
     "react-dom": "*"
   },
