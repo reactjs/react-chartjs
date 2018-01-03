@@ -130,51 +130,41 @@ return /******/ (function(modules) { // webpackBootstrap
 	    classData.componentWillReceiveProps = function(nextProps) {
 	      var chart = this.state.chart;
 
-	      // // Reset the array of datasets
-	      chart.data.datasets.forEach(function(set, setIndex) {
-	        set.data.forEach(function(val, pointIndex) {
-	          set.data = [];
+	      if (nextProps.redraw) {
+	        chart.destroy();	// Reset the array of datasets
+	        this.initializeChart(nextProps);
+	      } else {
+	        // assign all of the properites from the next datasets to the current chart
+	        nextProps.data.datasets.forEach(function(set, setIndex) {
+	          
+	          var chartDataset = {};
+
+	          for (var property in set) {
+	            if (set.hasOwnProperty(property)) {
+	              chartDataset[property] = set[property];
+	            }
+	          }
+	          
+	          chart.data.datasets[setIndex] = chartDataset;
 	        });
-	      });
 
-	      // // Reset the array of labels
-	      chart.data.labels = [];
+	        chart.data.labels = nextProps.data.labels;
 
-	      // Adds the datapoints from nextProps
-	      nextProps.data.datasets.forEach(function(set, setIndex) {
-	        set.data.forEach(function(val, pointIndex) {
-	          chart.data.datasets[setIndex].data[pointIndex] = nextProps.data.datasets[setIndex].data[pointIndex];
-	        });
-	      });
-
-	      // Sets the labels from nextProps
-	      nextProps.data.labels.forEach(function(val, labelIndex) {
-	          chart.data.labels[labelIndex] = nextProps.data.labels[labelIndex];
-	      });
-
-	      // Updates Chart with new data
-	      chart.update();
+	        chart.update();
+	      }
 	  };
 
 	    classData.initializeChart = function(nextProps) {
 	      var Chart = __webpack_require__(5);
 	      var el = ReactDOM.findDOMNode(this);
 	      var ctx = el.getContext("2d");
+	      var type = (chartType === 'PolarArea') ? 'polarArea':chartType.toLowerCase();
 
-	      if (chartType === 'PolarArea'){
-	        var chart = new Chart(ctx, {
-	          type: 'polarArea',
-	          data: nextProps.data,
-	          options: nextProps.options
-	        });
-	      } else {
-	        var chart = new Chart(ctx, {
-	          type: chartType.toLowerCase(),
-	          data: nextProps.data,
-	          options: nextProps.options
-	        });
-	      }
-	      this.state.chart = chart;
+	      this.state.chart = new Chart(ctx, {
+	        type: type,
+	        data: nextProps.data,
+	        options: nextProps.options
+	      });
 	    };
 
 
@@ -201,6 +191,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return React.createClass(classData);
 	  }
 	};
+
 
 /***/ },
 /* 3 */
