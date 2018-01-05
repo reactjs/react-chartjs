@@ -34,5 +34,8 @@
   "devDependencies": {
     "uglify-js": "^2.4.16",
     "webpack": "^1.4.14"
+  },
+  "dependencies": {
+    "create-react-class": "^15.6.2"
   }
 }
