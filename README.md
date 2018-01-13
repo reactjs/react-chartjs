@@ -44,3 +44,8 @@ Chart References
 ----------------
 The ```canvas``` element can be retrieved using ```getCanvas``` and the ```chartjs object``` can be retrieved using ```getChart```.
 
+
+Chart.js V 1.1.1 Documentation
+----------------
+
+Please see [chart.js 1.1.1 documentation](https://github.com/chartjs/Chart.js/tree/v1.1.1/docs) for details.
