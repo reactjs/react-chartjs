@@ -35,17 +35,11 @@ var MyComponent = React.createClass({
 });
 ```
 
-* ```data``` represents the chart data (see [chart.js](http://www.chartjs.org/) for details)
-* ```options``` represents the chart options (see [chart.js](http://www.chartjs.org/) for details)
+* ```data``` represents the chart data (see [chart.js](https://github.com/chartjs/Chart.js/tree/v1.1.1/docs)
+* ```options``` represents the chart options (see [chart.js](https://github.com/chartjs/Chart.js/tree/v1.1.1/docs) for details)
 * all other parameters will be passed through to the ```canvas``` element
 * if data passed into the component changes, points will animate between values using chart.js' ```.update()```. If you want the chart destroyed and redrawn on every change, pass in ```redraw``` as a prop. For example ```<LineChart data={this.state.chartData} redraw />```
 
 Chart References
 ----------------
 The ```canvas``` element can be retrieved using ```getCanvas``` and the ```chartjs object``` can be retrieved using ```getChart```.
-
-
-Chart.js V 1.1.1 Documentation
-----------------
-
-Please see [chart.js 1.1.1 documentation](https://github.com/chartjs/Chart.js/tree/v1.1.1/docs) for details.
