@@ -16,7 +16,7 @@ Installation
 ------------
 This is a CommonJS component only (to be used with something like Webpack or Browserify)
 ```
-npm install --save react-chartjs
+npm install react-chartjs-2 --save
 ```
 You must also include [chart.js](https://www.npmjs.com/package/chart.js) and [React](https://www.npmjs.com/package/react) as dependencies.  
 ```
@@ -26,13 +26,13 @@ npm install --save chart.js@^1.1.1 react react-dom
 Example Usage
 -------------
 ```javascript
-var LineChart = require("react-chartjs").Line;
+import { Line } from "react-chartjs-2"
 
-var MyComponent = React.createClass({
-  render: function() {
-    return <LineChart data={chartData} options={chartOptions} width="600" height="250"/>
+class MyComponent extends React.Component {
+  render() {
+    return <Line data={chartData} options={chartOptions} width="600" height="250"/>
   }
-});
+};
 ```
 
 * ```data``` represents the chart data (see [chart.js](https://github.com/chartjs/Chart.js/tree/v1.1.1/docs) for details)
